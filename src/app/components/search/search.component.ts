@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
   title = 'Peliculas buscadas: ';
   pelis: any[];
   texto: string;
-  pelisBuscadas: any[];
+  pelisBuscadas: any[] = [];
 
   constructor( private activatedRoute: ActivatedRoute,
                private router: Router,
@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
     this._ps.buscarPelicula( this.texto )
             .subscribe( data => {
               this.pelisBuscadas = data;
-              console.log('Peli buscada: ', this.pelisBuscadas );
+              // console.log('Peli buscada (search): ', this.pelisBuscadas );
             });
   }
 

@@ -1,10 +1,10 @@
-<div *ngIf="pelisBuscadas != null && pelisBuscadas.length != 0">
+<div *ngIf="pelisBuscadas != null && pelisBuscadas.length > 0">
     <h1>{{ title }}</h1>
     <hr>
 </div>
 
 
-<div class="card-columns" *ngIf="pelisBuscadas != null || pelisBuscadas.length != 0">
+<div class="card-columns" *ngIf="pelisBuscadas != null || pelisBuscadas.length > 0">
 
     <app-peli-tarjeta [peli]="peli" [index]="i" *ngFor="let peli of pelisBuscadas; let i = index"></app-peli-tarjeta>
 

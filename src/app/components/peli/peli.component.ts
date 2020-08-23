@@ -14,7 +14,7 @@ export class PeliComponent implements OnInit {
   public urlImageMoviedb = 'http://image.tmdb.org/t/p/w300';
   pelis: any[];
   texto: string;
-  peli: any;
+  peli: any = '';
 
   constructor( private activatedRoute: ActivatedRoute,
                private router: Router,
@@ -29,7 +29,7 @@ export class PeliComponent implements OnInit {
     this._ps.buscarPeliculaById( this.texto )
             .subscribe( data => {
               this.peli = data;
-              console.log('Peli buscada: ', this.peli );
+              // console.log('Peli seleccionada: ', this.peli );
             });
   }
 

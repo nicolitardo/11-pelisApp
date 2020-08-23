@@ -23,7 +23,7 @@ export class PelisNinosComponent implements OnInit {
     this._ps.getPopularesNiños()
             .subscribe( data => {
               this.pelis = data;
-              console.log( 'pelis: ', this.pelis );
+              // console.log( 'pelis niños: ', this.pelis );
             });
   }
 

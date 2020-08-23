@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
   buscarPelis( texto: string ) {
-    console.log('texto: ', texto);
+    // console.log('texto a buscar: ', texto);
     this.router.navigate([ '/search', texto ]);
   }
 }

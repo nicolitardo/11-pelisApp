@@ -59,7 +59,7 @@ export class PeliculaService {
 
     return this.http.get( url )
                 .pipe(map( (res: any) => {
-                  console.log('pelis buscadas: ', res);
+                  // console.log('pelis buscadas: ', res);
                   return res.results;
                 }));
   }
@@ -70,7 +70,7 @@ export class PeliculaService {
 
     return this.http.get( url )
                 .pipe(map( (res: any) => {
-                  console.log('pelis buscada: ', res);
+                  // console.log('pelis buscada: ', res);
                   return res;
                 }));
   }
