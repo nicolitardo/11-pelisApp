@@ -1,0 +1,21 @@
+<div class="jumbotron jumbotron-fluid animated fadeIn fast">
+
+    <div class="container">
+        <h1 class="display-4">Pelis App</h1>
+        <p class="lead">Esta es una aplicacion de Peliculas.</p>
+    </div>
+
+</div>
+
+<div class="container">
+    <br>
+    <div class="row">
+        <h1>Catelera</h1>
+        <hr>
+        <div class="card-columns">
+
+            <app-peli-tarjeta (peliSeleccionado)="verPeli( $event )" [peli]="peli" [index]="i" *ngFor="let peli of pelis; let i = index"></app-peli-tarjeta>
+
+        </div>
+    </div>
+</div>

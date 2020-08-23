@@ -1,0 +1,30 @@
+<h1 class="animated fadeIn"> {{ peli.title | uppercase }} <small> ({{ peli.release_date | date:'y' }}) </small></h1>
+
+<hr>
+<div class="row animated fadeIn fast">
+
+    <div class="col-md-4">
+
+        <img [src]="urlImageMoviedb + peli.poster_path" class="img-fluid" [alt]="peli.title">
+        <br><br>
+        <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+
+    </div>
+
+    <div class="col-md-8">
+        <h5>{{ peli.overview }}</h5>
+        <hr>
+        <div *ngIf="peli.genres != null">
+            Generos:
+            <br><br>
+            <ul>
+                <p *ngFor="let genre of peli.genres">
+                    <li>{{ genre.name }}</li>
+                </p>
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
