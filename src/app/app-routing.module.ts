@@ -10,10 +10,15 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pelis', component: PelisComponent },
+  { path: 'pelis/:busqueda', component: PelisComponent },
   { path: 'pelisNiños', component: PelisNinosComponent },
+  { path: 'pelisNiños/:busqueda', component: PelisNinosComponent },
   { path: 'peli/:id', component: PeliComponent },
   { path: 'peli/:id/:pag', component: PeliComponent },
+  { path: 'peli/:id/:pag/:busqueda', component: PeliComponent },
   { path: 'buscar/:texto/:pag', component: BuscarComponent },
+  { path: 'buscar/:pag/:busqueda', component: BuscarComponent },
+  { path: 'buscar/:busqueda', component: BuscarComponent },
   { path: 'buscar', component: BuscarComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 

@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class BuscarComponent implements OnInit {
 
   buscar = '';
+  busqueda = '';
   regresarA = 'buscar';
   peliculas: any[];
   constructor( private activatedRoute: ActivatedRoute,
@@ -17,7 +18,11 @@ export class BuscarComponent implements OnInit {
                private router: Router ) {
     this.activatedRoute.params.subscribe( params => {
       this.buscar = params[ 'texto' ];
-      // console.log('buscar a: ', this.buscar);
+      this.busqueda = params[ 'busqueda' ];
+      if ( this.buscar == null || this.buscar.length == 0 ) {
+        this.buscar = this.busqueda;
+      }
+      // console.log('busqueda: ', this.busqueda);
     });
   }
 
@@ -36,7 +41,7 @@ export class BuscarComponent implements OnInit {
 
   verPeli( idx: number, pag: string ) {
     // console.log( idx );
-    this.router.navigate( ['/peli', idx, pag] );
+    this.router.navigate( ['/peli', idx, pag, this.buscar] );
     // this.heroeSeleccionado.emit( this.index );
   }
 

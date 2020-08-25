@@ -16,6 +16,7 @@ export class PeliComponent implements OnInit {
   texto: string;
   peli: any = '';
   regresarA = '';
+  busqueda = '';
 
   constructor( private activatedRoute: ActivatedRoute,
                private router: Router,
@@ -24,8 +25,11 @@ export class PeliComponent implements OnInit {
     this.activatedRoute.params.subscribe( params => {
       this.texto = params[ 'id' ];
       this.regresarA = params[ 'pag'];
-      // console.log( 'id: ', this.texto );
-      // console.log( 'debe regresar a: ', this.regresarA );
+      if ( params[ 'busqueda' ] ) {
+        this.busqueda = params[ 'busqueda' ];
+      }
+      // console.log( 'regresarA: ', this.regresarA );
+      // console.log( 'PeliComponent - busqueda: ', this.busqueda );
     });
     this._ps.buscarPeliculaById( this.texto )
             .subscribe( data => {
