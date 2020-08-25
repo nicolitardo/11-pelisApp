@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-peli-tarjeta',
@@ -11,6 +11,7 @@ export class PeliTarjetaComponent implements OnInit {
 
   @Input() peli: any = {};
   @Input() index: number;
+  @Input( 'regresarA') regresarA;
   @Output() peliSeleccionado: EventEmitter<number>;
   public urlImageMoviedb = 'http://image.tmdb.org/t/p/w300';
 
@@ -21,9 +22,9 @@ export class PeliTarjetaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  verPeli( id: number ) {
-    // console.log( this.index );
-    this.router.navigate( ['/peli', id] );
+  verPeli( id: number, pag: string ) {
+    // console.log({ pag });
+    this.router.navigate( ['/peli', id, pag] );
     // this.heroeSeleccionado.emit( this.index );
   }
 

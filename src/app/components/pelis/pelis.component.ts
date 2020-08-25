@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class PelisComponent implements OnInit {
   title = 'Peliculas';
   pelis: any[];
-
+  regresarA = 'pelis';
 
   constructor( private router: Router,
                private _ps: PeliculaService ) {
@@ -26,10 +26,10 @@ export class PelisComponent implements OnInit {
             });
   }
 
-  verPeli( idx: number ) {
-    // console.log( this.index );
-    this.router.navigate( ['/search', idx] );
-    // this.heroeSeleccionado.emit( this.index );
-  }
+  // verPeli( idx: number, pag: string ) {
+  //   console.log( pag );
+  //   this.router.navigate( ['/search', idx, pag] );
+  //   // this.heroeSeleccionado.emit( this.index );
+  // }
 
 }

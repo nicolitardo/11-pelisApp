@@ -1,11 +1,11 @@
-<div class="card animated fadeIn fast">
-    <img *ngIf="peli.poster_path != null" (click)="verPeli( peli.id )" [src]="urlImageMoviedb + peli.poster_path" class="card-img-top" [alt]="peli.nombre">
+<div class="card animated fadeIn fast" *ngIf="peli">
+    <img *ngIf="peli.poster_path != null" (click)="verPeli( peli.id, regresarA )" [src]="urlImageMoviedb + peli.poster_path" class="card-img-top puntero" [alt]="peli.nombre">
     <div class="card-body">
         <h4 class="card-title">{{ peli.title }}</h4>
         <p class="card-text">{{ peli.overview }}</p>
         <p class="card-text"><small class="text-muted">{{ peli.aparicion }}</small></p>
 
-        <button (click)="verPeli( peli.id )" type="button" class="btn btn-outline-primary btn-block">
+        <button (click)="verPeli( peli.id, regresarA )" type="button" class="btn btn-outline-primary btn-block">
             Ver más...
         </button>
         <p class="card-text">{{ peli.release_date }}</p>

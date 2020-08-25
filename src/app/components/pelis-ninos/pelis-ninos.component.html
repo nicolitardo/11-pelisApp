@@ -4,7 +4,7 @@
 
 <div class="card-columns">
 
-    <app-peli-tarjeta (peliSeleccionado)="verPeli( $event )" [peli]="peli" [index]="i" *ngFor="let peli of pelis; let i = index"></app-peli-tarjeta>
+    <app-peli-tarjeta [peli]="peli" [regresarA]="regresarA" [index]="i" *ngFor="let peli of pelis; let i = index"></app-peli-tarjeta>
 
 
 

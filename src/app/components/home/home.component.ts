@@ -8,19 +8,32 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  pelis: any[];
-
+  cartelera: any;
+  populares: any;
+  ninos: any;
+  public urlImageMoviedb = 'http://image.tmdb.org/t/p/w500';
   constructor( private router: Router,
                private _ps: PeliculaService ) {
+    this._ps.getCartelera()
+          .subscribe( data => {
+            this.cartelera = data;
+            // console.log( 'cartelera: ', this.cartelera );
+          });
+
+    this._ps.getPopulares()
+          .subscribe( data => {
+            this.populares = data;
+            // console.log( 'populares: ', this.populares );
+          });
+
+    this._ps.getPopularesNiños()
+          .subscribe( data => {
+            this.ninos = data;
+            // console.log( 'ninos: ', this.ninos );
+          });
    }
 
-  ngOnInit(): void {
-    this._ps.getCartelera()
-            .subscribe( data => {
-              this.pelis = data;
-              // console.log( 'cartelera: ', this.pelis );
-            });
-  }
+  ngOnInit(): void { }
 
   verPeli( idx: number ) {
     // console.log( this.index );

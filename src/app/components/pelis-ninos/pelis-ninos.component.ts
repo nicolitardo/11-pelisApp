@@ -12,7 +12,7 @@ export class PelisNinosComponent implements OnInit {
 
   title = 'Peliculas para niños';
   pelis: any[];
-
+  regresarA = 'pelisNiños';
 
   constructor( private router: Router,
                private _ps: PeliculaService ) {
@@ -27,9 +27,9 @@ export class PelisNinosComponent implements OnInit {
             });
   }
 
-  verPeli( idx: number ) {
-    // console.log( this.index );
-    this.router.navigate( ['/search', idx] );
+  verPeli( idx: number, pag: string ) {
+    // console.log({ pag });
+    this.router.navigate( ['/search', idx, pag] );
     // this.heroeSeleccionado.emit( this.index );
   }
 }

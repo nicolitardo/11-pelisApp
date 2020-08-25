@@ -5,15 +5,23 @@
 
     <div class="col-md-4">
 
-        <img [src]="urlImageMoviedb + peli.poster_path" class="img-fluid" [alt]="peli.title">
+        <img [src]="peli | peliculaImagen" class="img-fluid" [alt]="peli.title">
         <br><br>
-        <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+        <a [routerLink]="['/' + regresarA]" class="btn btn-outline-danger btn-block">Regresar</a>
 
     </div>
 
-    <div class="col-md-8">
-        <h5>{{ peli.overview }}</h5>
+    <div class="col-md-7">
+        <h3>Sinopsis</h3>
         <hr>
+        <p class="text-justify">{{ peli.overview }}</p>
+        <h4>Frase celebre</h4>
+        <p>{{ peli.tagline }}</p>
+        <hr>
+        <p>
+            Popularidad: <span class="badge badge-primary">{{ peli.popularity | number:'.0-0' }}/10</span>
+            <br> Votos promedio: <span class="badge badge-primary">{{ peli.vote_average }}</span>
+        </p>
         <div *ngIf="peli.genres != null">
             Generos:
             <br><br>

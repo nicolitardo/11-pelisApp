@@ -6,7 +6,7 @@
     </div>
 
 </div>
-
+<!-- 
 <div class="container">
     <br>
     <div class="row">
@@ -18,4 +18,15 @@
 
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <br>
+
+    <app-galeria [peliculas]="cartelera|slice:0:6" titulo="Peliculas en cartelera"></app-galeria>
+
+    <app-galeria [peliculas]="populares|slice:0:6" titulo="Populares"></app-galeria>
+
+    <app-galeria [peliculas]="ninos|slice:0:6" titulo="Populares entre los Niños"></app-galeria>
+
 </div>
